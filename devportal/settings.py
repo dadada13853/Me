@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     'djangocms_admin_style',
     # Leave this below djangocms_admin_style
     'django.contrib.admin',
+
+    'gnome_theme',
 ]
 
 MIDDLEWARE = [
@@ -159,6 +161,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 

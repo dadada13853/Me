@@ -1,0 +1,114 @@
+{% load cms_tags sekizai_tags static %}
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{% page_attribute "page_title" %} | GNOME Developer Documentation</title>
+
+<link rel="stylesheet" href="{% static 'gnome_theme/css/custom_bootstrap.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'gnome_theme/css/frontend.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'gnome_theme/css/jquery.mCustomScrollbar.min.css' %}">
+
+<link rel="stylesheet" href="{% static 'gnome_theme/css/extra_frontend.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'gnome_theme/css/prism.css' %}" type="text/css">
+
+<script src="{% static 'gnome_theme/js/jquery.js' %}"></script>
+<script src="{% static 'gnome_theme/js/bootstrap.js' %}"></script>
+<script src="{% static 'gnome_theme/js/typeahead.jquery.min.js' %}"></script>
+<script src="{% static 'gnome_theme/js/search.js' %}"></script>
+<script src="{% static 'gnome_theme/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'gnome_theme/js/compare-versions.js' %}"></script>
+<script src="{% static 'gnome_theme/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'gnome_theme/js/tag_filtering.js' %}"></script>
+<script src="{% static 'gnome_theme/js/language_switching.js' %}"></script>
+<script src="{% static 'gnome_theme/js/navigation.js' %}"></script>
+<script src="{% static 'gnome_theme/js/utils.js' %}"></script>
+
+
+<script src="{% static 'gnome_theme/js/css.escape.js' %}"></script>
+<script src="{% static 'gnome_theme/js/trie.js' %}"></script>
+<script src="{% static 'gnome_theme/js/prism-core.js' %}"></script>
+<script src="{% static 'gnome_theme/js/prism-autoloader.js' %}"></script>
+<script src="{% static 'gnome_theme/js/prism_autoloader_path_override.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'gnome_theme/js/sitemap.js' %}"></script></head>
+
+    {% render_block "css" %}
+
+<body data-spy="scroll" data-target=".scrollspy" data-offset="70">
+
+{% cms_toolbar %}
+
+<nav class="navbar navbar-fixed-top navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-wrapper" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a id="home-link" class="hotdoc-navbar-brand">
+				<img src="{% static 'gnome_theme/img/logo.svg' %}" alt="Home" id="home">
+				Developer
+			</a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar-wrapper">
+			<ul class="nav navbar-nav" id="menu">
+				<li>
+					<a>API Reference</a>
+				</li>
+				<li>
+					<a href="https://people.collabora.com/~meh/gdd/programming-guidelines.html">Design Guidelines</a>
+				</li>
+				<li>
+					<a>Tutorials</a>
+				</li>
+				<li>
+					<a>Distribute</a>
+				</li>
+			</ul>
+			<form action="https://people.collabora.com/~meh/gdd/index.html" class="navbar-form navbar-right">
+				<div class="form-group has-feedback">
+					<span class="twitter-typeahead" style="position: relative; display: inline-block;"><input type="text" class="form-control tt-hint" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" dir="ltr"><input type="text" class="form-control tt-input" name="search" id="sidenav-lookup-field" placeholder="Search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Source Sans Pro&quot;, &quot;Source Sans&quot;, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-search-trie"></div></div></span>
+					<span class="glyphicon glyphicon-search form-control-feedback"></span>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</nav>
+
+<main class="page-row page-row-expanded">
+<div data-extension="core" class="page_container" id="page-wrapper">
+	<div class="row">
+
+<div id="main">
+
+<div id="page-description" data-hotdoc-source="index.md">
+{% placeholder "content" %}
+</div>
+
+
+</div>
+	</div>
+</div>
+</main>
+
+<footer class="page-row">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3 col-xl-2"></div>
+		<div class="col-sm-12 col-md-9 col-xl-8">
+
+		</div>
+		<div class="hidden-xs col-xl-2"></div>
+	</div>
+</div>
+</footer>
+
+
+{% render_block "js" %}
+<script src="{% static 'gnome_theme/js/navbar_offset_scroller.js' %}"></script>
+</body></html>
