@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-j!!nz65g))c!_p1q65=4%93!x_wg(nb)%-n_88bz**re&!+5r'
+SECRET_KEY = 'ENV_DJANGO_SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'django.contrib.sites',
 
     'cms',
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'filer',
     'easy_thumbnails',
     'mptt',
-    
+
     'djangocms_link',
     'djangocms_file',
     'djangocms_picture',
@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'djangocms_snippet',
     'djangocms_style',
     'djangocms_column',
-    
+
     'djangocms_text_ckeditor',
 
     'djangocms_admin_style',
@@ -74,7 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
     'django.middleware.locale.LocaleMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
@@ -112,11 +112,13 @@ WSGI_APPLICATION = 'devportal.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'developerportal',
+        'USER': 'developerportal',
+        'PASSWORD': 'ENV_DB_PASSWORD',
+        'HOST': 'ENV_DB_HOST',
     }
 }
 
